@@ -1,16 +1,18 @@
 public class Product {
-    String prodName;    // 상품명
-    int price;          // 가격
-    String prodContent; // 설명
-    int leftCnt;        // 재고수량
+    // 변수 선언
+    private String prodName = null;    // 상품명
+    private int price = 0;          // 가격
+    private String prodContent = null; // 설명
+    private int leftCnt = 0;        // 재고수량
 
+    // 상품객체 생성자
     public Product(String prodName, int price, String prodContent) {
         this.prodName = prodName;
         this.price = price;
         this.prodContent = prodContent;
-        this.leftCnt = 0;
     }
 
+    // Getter
     public String getProdName() {
         return this.prodName;
     }
