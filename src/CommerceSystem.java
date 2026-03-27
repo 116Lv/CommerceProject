@@ -5,9 +5,9 @@ import java.util.stream.IntStream;
 
 public class CommerceSystem {
 
-    int checkNum = 0;
-    boolean checkPoint = false;
-    List<Category> categories = null;
+    private int checkNum = 0;
+    private boolean checkPoint = false;
+    private List<Category> categories = null;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -35,7 +35,7 @@ public class CommerceSystem {
                     checkPoint = true;
                 } else if(0 < checkNum && checkNum <= categories.size()) {
                     if(categories.get(checkNum-1).getProducts().isEmpty()) {
-                        System.out.printf("%s 카테고리로 등록된 상품이 없습니다.\n\n", categories.get(checkNum-1).getCategoryName());
+                        System.out.printf("%s 카테고리로 등록된 상품이 없습니다.%n%n", categories.get(checkNum-1).getCategoryName());
                     } else {
                         showList(categories.get(checkNum-1));
                     }
@@ -50,17 +50,18 @@ public class CommerceSystem {
         scanner.close();
     }
 
+    // 원하는 카테고리의 products 리스트 조회 및 검색
     public void showList(Category category) {
 
         //출력
-        System.out.printf("\n[ %s 카테고리 ]\n", category.getCategoryName());
+        System.out.printf("%n[ %s 카테고리 ]%n", category.getCategoryName());
         IntStream
                 .range(0, category.getProducts().size())
                 .forEach(
                         i ->
                                 System.out.println((i+1) + ". " + category.getProducts().get(i).getPrintListInfo())
                 );
-        System.out.printf("%d.%-13s\n", 0, "뒤로가기");
+        System.out.printf("%d. %s%n", 0, "뒤로가기");
 
         do {
             try {
