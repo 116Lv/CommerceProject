@@ -10,6 +10,7 @@ public class Product {
         this.prodName = prodName;
         this.price = price;
         this.prodContent = prodContent;
+        this.leftCnt = 100;
     }
 
     // Getter
@@ -25,7 +26,16 @@ public class Product {
         return this.prodContent;
     }
 
-    public String getPrintInfo() {
-        return String.format("%-15s| %,10d원 | %s", prodName, price, prodContent);
+    public String getPrintListInfo() {
+        return String.format("%-13s| %,9d원 | %s", prodName, price, prodContent);
+    }
+
+    public String getPrintProductInfo() {
+        return String.format("%s | %,d원 | %s | 재고: %,d개", prodName, price, prodContent, leftCnt);
+    }
+
+    //Setter
+    public void setLeftCnt(int leftCnt) {
+        this.leftCnt = leftCnt;
     }
 }
