@@ -1,5 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+package Method;
+
+import java.util.*;
+import Resources.Category;
+import Resources.Product;
+import Resources.Customer;
 
 public class Main {
 

@@ -1,5 +1,11 @@
+package Method;
+
 import java.util.*;
 import java.util.stream.IntStream;
+import Resources.Category;
+import Resources.Product;
+import Resources.Customer;
+import Resources.Cart;
 
 public class CommerceSystem {
     // --- 필드 선언 ---

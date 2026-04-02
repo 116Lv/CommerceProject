@@ -1,3 +1,4 @@
+package Resources;
 public class Product {
     // 상품 필드 선언
     private String prodName = null;    // 상품명
