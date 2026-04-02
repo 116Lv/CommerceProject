@@ -16,15 +16,22 @@ public class Main {
 
         Category food = new Category("식품");
 
+        Customer customer = new Customer("홍길동", "hong@gmail.com");
+
         List<Category> categories = new ArrayList<>();
         categories.add(electronic);
         categories.add(clothes);
         categories.add(food);
 
         // 관리시스템 생성 후 시작
-        CommerceSystem cs = new CommerceSystem(categories);
+        if(customer.checkVerification()) {
+            System.out.println(customer.getCustomerName() + "님 환영합니다.\n");
+            CommerceSystem cs = new CommerceSystem(customer, categories);
+            cs.start();
+        } else {
+            System.out.println("잘못된 접근입니다. 다시 시도해주세요.");
+        }
 
-        cs.start();
 
     }
 }

@@ -26,6 +26,10 @@ public class Product {
         return this.prodContent;
     }
 
+    public int getLeftCnt() {
+        return this.leftCnt;
+    }
+
     public String getPrintListInfo() {
         return String.format("%-13s| %,9d원 | %s", prodName, price, prodContent);
     }
@@ -35,7 +39,13 @@ public class Product {
     }
 
     //Setter
-    public void setLeftCnt(int leftCnt) {
-        this.leftCnt = leftCnt;
+    // 장바구니에 담을때
+    public void setLeftCnt(int amount) {
+        this.leftCnt -= amount;
+    }
+
+    // 주문취소시 재고 다시 채울때
+    public void returnLeftCnt(int amount) {
+        this.leftCnt += amount;
     }
 }
